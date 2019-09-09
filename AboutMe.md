@@ -6,3 +6,5 @@ My name is Andrew Witte and I am a Computer Science major. I currently work in a
 I am hoping to take what I learn in this class and apply it to where I work. The credit union I work at MHVFCU is growing and the IT department plan’s on creating a software department. They are always looking for people to work on their website to make it easier for members, more stable and secure. I am hoping what I learn in this class I can transition over to my job and help with those improvements they are looking for. 
 
  
+ 
+ ![](me.jpg)
