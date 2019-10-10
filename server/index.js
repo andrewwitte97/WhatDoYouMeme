@@ -4,7 +4,7 @@ const userController = require('./controllers/Users');
 const gameController = require('./controllers/Game');
 
 const app = express();
-const port = process.event.PORT ||  3000;
+const port = process.env.PORT ||  3000;
 
 app
     .get('/port', (req, res)=> res.send("Using port: " + port))
