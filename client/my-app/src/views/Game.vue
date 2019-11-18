@@ -45,19 +45,20 @@
 </template>
 
 <script>
-import { Game_Client, Game_Server, My_Captions } from "../models/Game";
+import { Game_Server } from "../models/Game";
 export default {
     data: ()=> ({
-        game: Game_Client,
-        My_Captions
+        game: {},
+        My_Captions: []
     }),
-    created(){
-        this.My_Captions = Game_Server.Get_Hand();
+    async created(){
+        this.My_Captions = await Game_Server.Get_Hand();
+        setInterval( async ()=> this.game = await Game_Server.Get_State(), 2000 )
+        
     },
     methods: {
         pictureClicked(){
-            this.game.Picture_In_Play = Game_Server.Get_Next_Picture();
-            this.game.Dealer ++;
+            Game_Server.Flip_Picture();
         }
     }
 }
