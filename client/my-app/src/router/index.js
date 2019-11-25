@@ -13,7 +13,7 @@ const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/game', name: 'game', component: Game,
   beforeEnter: (to, from, next) => {
-     if(User.User_Id != null){
+     if(User.User_Id == null){
        next( { name: "login" } )
      }else{
        next();

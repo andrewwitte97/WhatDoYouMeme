@@ -13,6 +13,15 @@ app.use(function(req, res, next) {
     next();
   });
 
+
+  app.use(function(req, res, next) {
+    const arr = (req.headers.authorization || "").split(" ");
+    if(arr.length > 1 && arr[1] != null){
+      req.user_id = +arr[1];
+    }
+    next();
+  });
+
   app
     .use(function(req, res, next){
       const arr = req.headers.authorization.split(" ")
