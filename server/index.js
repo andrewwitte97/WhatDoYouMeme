@@ -29,6 +29,7 @@ app
     .use('/users', userController )
     .use('/gameApi', gameController )
     .get('*', (req, res)=> res.sendFile(__dirname + '/dist/index.html' ))
+    ;
 
 app
     .use((err, req, res, next) => {
