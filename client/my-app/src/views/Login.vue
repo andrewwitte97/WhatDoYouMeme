@@ -1,5 +1,5 @@
 <template>
-   <div>
+<div>
     <h1 class="is-size-1">
         Login
     </h1> 
@@ -39,34 +39,29 @@
         </div>
     </div>
 </div>
+
 </template>
 
 <script>
-import { Game_Server } from"../models/Game";
-
+import { Game_Server } from "../models/Game";
 export default {
     data: ()=>({
-        name: " ",
+        name: "",
         error: ""
     }),
-
     methods: {
-        async join(){
-                 Game_Server.Join(this.name)
-                    .catch(err=> {
-                        console.error(err)
-                        this.error = err.message;
-                    });
-                    
-
+        join(){
+            Game_Server.Join(this.name)
+                .catch(err=> {
+                    console.error(err);
+                    this.error = err.message;
+                });
         }
     }
-
 }
 </script>
 
-<style lang="scss"> 
-
+<style lang="scss">
     .fas.fa-exclamation-triangle {
         display: none;
     }
