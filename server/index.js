@@ -28,7 +28,7 @@ app
     .use('/', express.static( path.join( __dirname , 'dist' ) ) )
     .use('/users', userController )
     .use('/gameApi', gameController )
-    .get('*', (req, res)=> res.sendFile(path.join( __dirname , 'dist/index.html' )));
+    .get('*', (req, res)=> res.sendFile(__dirname + '/dist/index.html' ))
 
 app
     .use((err, req, res, next) => {
